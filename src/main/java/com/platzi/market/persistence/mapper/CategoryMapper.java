@@ -10,9 +10,9 @@ import org.mapstruct.Mappings;
 @Mapper(componentModel = "spring")
 public interface CategoryMapper {
     // Aquí hacemos la conversion, indicamos de donde traeremos el objeto a convertir (source) y a qué lo queremos convertir (target)
+    // El source viene de la clase Categoria
     @Mappings({
-            // El source viene de la clase Categoria
-            @Mapping(source = "id_categoria", target = "categoryId"),
+            @Mapping(source = "idCategoria", target = "categoryId"),
             @Mapping(source = "descripcion", target = "category"),
             @Mapping(source = "estado", target = "active"),
     })
@@ -26,5 +26,5 @@ public interface CategoryMapper {
     */
     @InheritInverseConfiguration
     @Mapping(target = "productos", ignore = true)
-    Categoria toCategory(Category category);
+    Categoria toCategoria(Category category);
 }

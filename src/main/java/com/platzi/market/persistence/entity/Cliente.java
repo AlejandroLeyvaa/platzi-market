@@ -8,7 +8,7 @@ import java.util.List;
 public class Cliente {
 
     @Id
-    private  String id;
+    private String id;
     private String nombre;
     private String apellidos;
     private Number celular;
