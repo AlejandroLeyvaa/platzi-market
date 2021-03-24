@@ -24,10 +24,11 @@ public class Compra {
     private String comentario;
     private String estado;
 
-    @OneToMany(mappedBy = "producto")
+    @OneToMany(mappedBy = "compra", cascade = {CascadeType.ALL})
     private List<ComprasProducto> productos;
 
     @ManyToOne
+    @MapsId("idCompra")
     @JoinColumn(name = "id_cliente", insertable = false, updatable = false)
     private Cliente cliente;
 
